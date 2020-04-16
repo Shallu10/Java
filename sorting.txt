@@ -1,0 +1,14 @@
+import java.util.Arrays;
+public class sort {
+		public static void main(String[] args)
+		{
+			int array1[]= {4,2,5,-1,10,4};
+			String str[]= {"a","c","b","abc","ab"};
+			
+			Arrays.sort(array1);
+			Arrays.sort(str);
+			System.out.println(Arrays.toString(array1)+"\n"+Arrays.toString(str));
+		}
+	}
+
+
