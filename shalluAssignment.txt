@@ -1,0 +1,267 @@
+Ques-1 What do you mean by a Data structure? 
+Ans-1  A data structure is a specialized format for organizing, processing, retrieving and storing data.Data structure is designed to arrange data to suit a specific purpose so that it can be accessed and worked with in appropriate ways.
+
+Ques-2 what are some application of data structure?
+Ans-2 a.) Arrays :  Array  is a data structure consisting of a collection of elements .
+b.)Stack: Evaluation of expressions, Backtracking, Runtime memory management, Arrangement of books in a library.
+c.)Queue: Here, the data sent need not be received at the same rate at which it was sent. A certain system resource is to be shared between different processes.
+d.)Linked-List: Representation of sparse matrices, Non-contiguous data storage, Implementation of non-binary tree or other data structures, Dynamic memory management, Equalizing parenthesis, Symbol tables.
+e.)Set: Mapping of data, Common data storage.
+f.)Graph: Computer networking, Problem solutions involving 'Depth-First' search or 'Breadth-First' search algorithms, Representation of matrices, Study of molecular interactions in Chemistry.
+g.)Tree: Representation of data lists, Quickly accessible data storage, Representation of hierarchal data, Routing of algorithms.
+h.)Hash-table: Unique data representation, Implementation of caches, Array association, Locating entries in a table, Representation of objects, Database indexing.
+i.)File: Implementation of computer programs, Data comparison, Storage of data having varying data types.
+
+Ques-3 What are the advantages of a Linked list over an array?
+Ans-3 a.) Linked list has dynamic size whereas for array it is fixed size.We cant change the size of an array once the size id declared.
+          b.)Insertion and deletion is easy in linked list as compare to the array.
+          c.)Linked list is heterogenous in nature i.e we can store different type of data while in array we can store only on type of data why array is homogenous in nature.
+          d.)It is dynamic whike array is static.
+
+Ques-4 Write the syntax in C to create a node in the singly linked list.
+Ans-4   struct node{ 
+	 int data;  
+	    struct node *next;  
+	}
+	 struct node newNode = (struct node)malloc(sizeof(struct node));  
+	    newNode->data = data;  
+	    newNode->next = NULL;
+
+Ques-5 What is the use of a doubly-linked list when compared to that of a singly linked list?
+Ans-5   Doubly linked list can be used in navigation systems where both front and back navigation is required.Doubly linked list acces the element fast as compare to the single linked list.
+
+Ques-6 What is the difference between an Array and Stack?
+Ans-6   a.)An array is a collection of related data values called elements each identified by an index array. while a stack is a linear data structure represented by a sequential collection of elements in a fixed
+ order.
+           b.)The objects are arranged in a way so that  they ca be accessed at any time in a random fashion.While in a stack the object are arranged in a way that they can added and removed from our end only.
+           c.)It support any operation such as insertion,deletion,traversing,sorting and merging.While in a stack there is basic two operations POP and PUSH.
+            d.)It contains values of the same data type.While  stack may contains value that belong to different data type.
+
+Ques-7 What are the minimum number of Queues needed to implement the priority queue?
+Ans-7  Two Queues needed to implement the priority queue.One queue is used for the actual storing of data, and the other one is used for storing the priorities.
+
+Ques-8 What are the different types of traversal techniques in a tree?
+Ans-8 There are three different types of traversal technique.
+          a.)InOrder
+          b.)PreOrder
+           c.)PostOrder
+
+Ques- 9 Why it is said that searching a node in a binary search tree is efficient than that of a simple binary tree?
+Ans-9     Searching of an element is faster in binary search tree than binary tree due to the ordered characteristics.
+
+Ques-10 What are the applications of Graph DS?
+Ans-10    a.)Facebook’s Graph API uses the structure of Graphs.
+               b.)Google’s Knowledge Graph also has to do something with Graph.
+               c.)Dijkstra algorithm or the shortest path first algorithm also uses graph structure to finding the smallest path between the nodes of the graph.
+               d.)GPS navigation system also uses shortest path APIs.
+
+Ques-11  Can we apply Binary search algorithm to a sorted Linked list?
+Ans-11 No we cannot apply binary search algorithm to a sorted linked list, since there is no way of indexing the middle element in the list. 
+
+Ques-12  When can you tell that a Memory Leak will occur?
+Ans-12    Memory leak occurs when programmers create a memory in heap and forget to delete it. Memory leaks are particularly serious issues for programmers. To avoid memory leaks, memory allocated on heap should always be freed when no longer needed.
+
+Ques-13 How will you check if a given Binary Tree is a Binary Search Tree or not?
+ Ans-13 A binary search tree (BST) is a node based binary tree data structure which has the following properties.
+• The left subtree of a node contains only nodes with keys less than the node’s key.
+• The right subtree of a node contains only nodes with keys greater than the node’s key.
+• Both the left and right subtrees must also be binary search trees.
+
+Ques-14 Which data structure is ideal to perform recursion operation and why?
+Ans-14  Stack data structure is used in recursion due to its last in first out nature. Operating system maintains the stack in order to save the iteration variables at each function call.
+
+Ques-15 What are some of the most important applications of a Stack.
+Ans-15   a.)Infix to Postfix or Infix to Prefix Conversion −The stack can be used to convert some infix expression into its postfix equivalent, or prefix equivalent. These postfix or prefix notations are used in computers to express some expressions. These expressions are not so much familiar to the infix expression, but they have some great advantages also. We do not need to maintain operator ordering, and parenthesis.
+
+              b.)Postfix or Prefix Evaluation − After converting into prefix or postfix notations, we have to evaluate the expression to get the result. For that purpose, also we need the help of stack data structure.
+.
+              c.)Backtracking Procedure −Backtracking is one of the algorithm designing technique.
+
+Ques-17 Sorting a stack using a temporary stack.
+Ans-17  Stack sort_stack(Stack input_stack) {
+    Stack aux_stack
+    while(!input_stack.empty())
+    {
+        int temp_value = input_stack.top()
+        input_stack.pop()
+        while(!aux_stack.empty() and aux_stack.top() > temp) {
+            input_stack.push(aux_stack.top())
+            aux_stack.pop()
+        }
+        aux_stack.push(temp_value)
+    }
+    return aux_stack}
+ 
+Ques-18 Program to reverse a queue.
+Ans-18 import java.util.LinkedList; 
+import java.util.Queue; 
+import java.util.Stack; 
+public class Queue_reverse { 
+    static Queue<Integer> queue; 
+    static void Print() 
+    { 
+        while (!queue.isEmpty()) { 
+            System.out.print( queue.peek() + ", "); 
+            queue.remove(); 
+        } 
+    } 
+    static void reversequeue() 
+    { 
+        Stack<Integer> stack = new Stack<>(); 
+        while (!queue.isEmpty()) { 
+            stack.add(queue.peek()); 
+            queue.remove(); 
+        } 
+        while (!stack.isEmpty()) { 
+            queue.add(stack.peek()); 
+            stack.pop(); } 
+    } 
+    public static void main(String args[]) 
+    { 
+        queue = new LinkedList<Integer>(); 
+        queue.add(10); 
+        queue.add(20); 
+        queue.add(30); 
+        queue.add(40); 
+        reversequeue(); 
+        Print(); 
+    } 
+} 
+
+Ques-19  Program to reverse first k elements of a queue 
+Ans-19 import java.util.LinkedList; 
+import java.util.Queue; 
+import java.util.Stack; 
+public class Reverse_k_element_queue { 
+    static Queue<Integer> queue; 
+    static void reverseQueueFirstKElements(int k) 
+    { 
+        if (queue.isEmpty() == true
+            || k > queue.size()) 
+            return; 
+        if (k <= 0) 
+            return; 
+        Stack<Integer> stack = new Stack<Integer>(); 
+        for (int i = 0; i < k; i++) { 
+            stack.push(queue.peek()); 
+            queue.remove(); 
+        } 
+ while (!stack.empty()) { 
+            queue.add(stack.peek()); 
+            stack.pop(); 
+        } 
+        for (int i = 0; i < queue.size() - k; i++) { 
+            queue.add(queue.peek()); 
+            queue.remove(); 
+        } 
+    }
+Public static void Print() 
+    { 
+        while (!queue.isEmpty()) { 
+            System.out.print(queue.peek() + " "); 
+            queue.remove(); 
+        }     } 
+    public static void main(String args[]) 
+    { 
+        queue = new LinkedList<Integer>(); 
+        queue.add(10); 
+        queue.add(20); 
+        queue.add(30); 
+        queue.add(40); 
+        queue.add(50);
+        int k = 5; 
+        reverseQueueFirstKElements(k); 
+        Print();    } 
+} 
+
+Ques-21Program to reverse a linked list.
+Ans-21  Reverse a linked list
+package training;
+import java.util.*; 
+/*class source { 
+    Node head; 
+    static Node temp; 
+    class Node { 
+        int data; 
+        Node next; 
+        Node(int d) { 
+            data = d; 
+            next = null; 
+        } 
+    } 
+    Node Reverse(Node current) { 
+       
+     
+    	Node prev = null; 
+        Node cur = current; 
+        Node next = null; 
+        while (cur != null) { 
+            next = cur.next; 
+            cur.next = prev; 
+            prev = cur; 
+            cur = next; 
+        } 
+        current = prev; 
+        return cur; 
+    } 
+
+  
+    public void push(int new_data) { 
+
+        Node temp = head; 
+
+        Node new_node = new Node(new_data); 
+
+        if (head == null) { 
+
+            head = new_node; 
+
+        } else { 
+
+            while (temp.next != null) { 
+                temp = temp.next; 
+            }
+            temp.next = new_node; 
+        } 
+    } 
+    public void print() { 
+        Node tnode = head; 
+        int i=0;
+        while (tnode != null) { 
+            System.out.print(tnode.data +  " " + i); 
+            tnode = tnode.next; 
+        } i++;
+    } 
+    public static void main(String[] args) { 
+        Scanner in = new Scanner(System.in); 
+        source obj = new source(); 
+        int no = in.nextInt(); 
+        for (int i = 0; i < no; i++) { 
+            obj.push(in.nextInt()); 
+        } 
+        //int pos = in.nextInt(); 
+      
+        obj.Reverse(obj.head); 
+        obj.print(); 
+}
+      } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
