@@ -1,0 +1,122 @@
+Ques-2Write a program to implement the basic methods of stack i.e. push( ) and pop( ) using a single queue. Your program should take the following lines of input: 
+The number of elements you want to insert in the stack. 
+package training;
+import java.util.LinkedList; 
+import java.util.Queue;
+import java.util.Scanner; 
+public class stack 
+{ 
+	Queue<Integer> q = new LinkedList<Integer>(); 
+	void push(int val) 
+	{ 
+		int size = q.size(); 
+		q.add(val); 
+		for (int i = 0; i < size; i++) 
+		{ 
+			int x = q.remove(); 
+			q.add(x); 
+		} 
+	} 
+	int pop() 
+	{ 
+		if (q.isEmpty()) 
+		{ 
+			System.out.println("No elements"); 
+			return -1; 
+		} 
+		int x = q.remove(); 
+		System.out.println("popped element " + x);
+		return x; 
+	} 
+	int top() 
+	{ 
+		if (q.isEmpty()) 
+			return -1; 
+		return q.peek(); 
+	} 
+	boolean isEmpty() 
+	{ 
+		return q.isEmpty(); 
+	} 
+	public static void main(String[] args) 
+	{ 
+		Scanner in = new Scanner(System.in);
+		stack s = new stack(); 
+		System.out.println("enter the total no of element");
+		int no=in.nextInt();
+		if(no==0) {
+			System.out.println("the stack is empty");
+		}
+		else {
+			
+		System.out.println("enter the values of element");
+		for(int i=1;i<=no;i++) {
+			int val=in.nextInt();
+			s.push(val);
+		}
+		s.isEmpty();
+		System.out.println("Top element :" + s.top()); 
+		}
+		
+	} 
+}
+
+Ques-1
+package training;
+
+import java.util.Scanner;
+
+public class loancalculator {
+	String name;
+	int n,x,y,type;
+	public double getdetail(String name1,int x1,int y1,int type1) {
+		
+		//String name=name1;
+		int x=x1;
+		int y=y1;
+		int type=type1;
+		if(x<5000000) 
+		{
+			if (type==0) {
+				double value=(x*y*15/100)*100;
+					return value;
+						}
+			else {
+			double value=(x*y*20/100)*100;
+			return value;}
+		}
+		else{
+			if (type==0)
+			{
+			double value=(x*y*10/100)*100;
+			return value;
+			}
+			else 
+			{
+			double value=(x*y*15/100)*100;
+			return value;}
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		loancalculator lc=new loancalculator();
+		System.out.println("enter name");
+		String name1=sc.nextLine();
+		System.out.println("type of vehicle");
+		int type1=sc.nextInt();
+		if(type1==0||type1==1) {
+		System.out.println("net price of the vehicle");
+		int x1=sc.nextInt();
+		System.out.println("duration of loan");
+		int y1=sc.nextInt();
+		double out=lc.getdetail(name1, x1, y1,type1);
+		System.out.print(out);
+		}
+		else
+			System.out.println("invalid vehicle type");
+		
+		
+	}
+		
+}
